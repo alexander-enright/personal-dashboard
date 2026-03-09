@@ -448,4 +448,11 @@ footer {
     .stats-grid {
         grid-template-columns: 1fr;
     }
+    
+}
+.ae-logo-img {
+    width: 80px;
+    height: auto;
+    margin: 0 auto 1rem;
+    display: block;
 }
