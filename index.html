@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Header with Clock and Greeting -->
+        <header class="header">
+            <div class="clock-section">
+                <div id="clock" class="clock">00:00:00</div>
+                <div id="date" class="date">Loading...</div>
+            </div>
+            <div class="greeting-section">
+                <h1 id="greeting">Hello, Alex</h1>
+                <p class="sub-greeting">Here's your daily overview</p>
+            </div>
+        </header>
+
+        <!-- Main Grid -->
+        <main class="grid">
+            <!-- Weather Widget -->
+            <section class="widget weather-widget">
+                <div class="widget-header">
+                    <h2>🌤️ Weather</h2>
+                    <div class="location-input">
+                        <input type="text" id="cityInput" placeholder="Enter city..." value="Sacramento">
+                        <button onclick="updateWeather()">Go</button>
+                    </div>
+                </div>
+                <div id="weatherContent" class="weather-content">
+                    <div class="loading">Loading weather...</div>
+                </div>
+            </section>
+
+            <!-- Tasks Widget -->
+            <section class="widget tasks-widget">
+                <div class="widget-header">
+                    <h2>✅ Tasks</h2>
+                    <span id="taskCount" class="badge">0</span>
+                </div>
+                <div class="task-input-area">
+                    <input type="text" id="taskInput" placeholder="Add a new task..." onkeypress="handleEnter(event)">
+                    <button onclick="addTask()">+</button>
+                </div>
+                <ul id="taskList" class="task-list">
+                    <!-- Tasks load here -->
+                </ul>
+                <button onclick="clearCompleted()" class="clear-btn">Clear Completed</button>
+            </section>
+
+            <!-- Calendar Widget -->
+            <section class="widget calendar-widget">
+                <div class="widget-header">
+                    <h2>📅 Upcoming</h2>
+                    <button onclick="addEvent()" class="add-event-btn">+ Add</button>
+                </div>
+                <div id="eventsList" class="events-list">
+                    <!-- Events load here -->
+                </div>
+            </section>
+
+            <!-- Quick Stats -->
+            <section class="widget stats-widget">
+                <div class="widget-header">
+                    <h2>📊 Today</h2>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-number" id="pendingTasks">0</span>
+                        <span class="stat-label">Pending Tasks</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" id="completedTasks">0</span>
+                        <span class="stat-label">Completed</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" id="upcomingEvents">0</span>
+                        <span class="stat-label">Events Today</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Last updated: <span id="lastUpdated">--:--</span></p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
