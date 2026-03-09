@@ -451,9 +451,9 @@ footer {
     
 }
 .ae-logo-img {
-    width: 20px;
-    height: 20px;
-    margin: 0 auto 1rem;
+    width: 16px;
+    height: 16px;
+    margin: 0 auto .5rem;
     display: block;
 }
 
